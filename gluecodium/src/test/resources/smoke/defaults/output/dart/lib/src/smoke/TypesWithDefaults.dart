@@ -1,5 +1,4 @@
-import 'package:library/src/Boolean__conversion.dart';
-import 'package:library/src/String__conversion.dart';
+import 'package:library/src/BuiltInTypes__conversion.dart';
 import 'package:library/src/smoke/AnEnum.dart';
 import 'package:library/src/smoke/AnEnum__conversion.dart';
 import 'package:library/src/smoke/DefaultValues.dart';
@@ -106,6 +105,35 @@ StructWithDefaults smoke_TypesWithDefaults_StructWithDefaults_fromFfi(Pointer<Vo
   return _result;
 }
 void smoke_TypesWithDefaults_StructWithDefaults_releaseFfiHandle(Pointer<Void> handle) => _smoke_TypesWithDefaults_StructWithDefaults_release_handle(handle);
+// Nullable StructWithDefaults
+final _smoke_TypesWithDefaults_StructWithDefaults_create_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithDefaults_create_handle_nullable');
+final _smoke_TypesWithDefaults_StructWithDefaults_release_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Void Function(Pointer<Void>),
+    void Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithDefaults_release_handle_nullable');
+final _smoke_TypesWithDefaults_StructWithDefaults_get_value_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithDefaults_get_value_nullable');
+Pointer<Void> smoke_TypesWithDefaults_StructWithDefaults_toFfi_nullable(StructWithDefaults value) {
+  if (value == null) return Pointer<Void>.fromAddress(0);
+  final _handle = smoke_TypesWithDefaults_StructWithDefaults_toFfi(value);
+  final result = _smoke_TypesWithDefaults_StructWithDefaults_create_handle_nullable(_handle);
+  smoke_TypesWithDefaults_StructWithDefaults_releaseFfiHandle(_handle);
+  return result;
+}
+StructWithDefaults smoke_TypesWithDefaults_StructWithDefaults_fromFfi_nullable(Pointer<Void> handle) {
+  if (handle.address == 0) return null;
+  final _handle = _smoke_TypesWithDefaults_StructWithDefaults_get_value_nullable(handle);
+  final result = smoke_TypesWithDefaults_StructWithDefaults_fromFfi(_handle);
+  smoke_TypesWithDefaults_StructWithDefaults_releaseFfiHandle(_handle);
+  return result;
+}
+void smoke_TypesWithDefaults_StructWithDefaults_releaseFfiHandle_nullable(Pointer<Void> handle) =>
+  _smoke_TypesWithDefaults_StructWithDefaults_release_handle_nullable(handle);
 // End of StructWithDefaults "private" section.
 class ImmutableStructWithDefaults {
   final int intField;
@@ -211,6 +239,35 @@ ImmutableStructWithDefaults smoke_TypesWithDefaults_ImmutableStructWithDefaults_
   return _result;
 }
 void smoke_TypesWithDefaults_ImmutableStructWithDefaults_releaseFfiHandle(Pointer<Void> handle) => _smoke_TypesWithDefaults_ImmutableStructWithDefaults_release_handle(handle);
+// Nullable ImmutableStructWithDefaults
+final _smoke_TypesWithDefaults_ImmutableStructWithDefaults_create_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_ImmutableStructWithDefaults_create_handle_nullable');
+final _smoke_TypesWithDefaults_ImmutableStructWithDefaults_release_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Void Function(Pointer<Void>),
+    void Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_ImmutableStructWithDefaults_release_handle_nullable');
+final _smoke_TypesWithDefaults_ImmutableStructWithDefaults_get_value_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_ImmutableStructWithDefaults_get_value_nullable');
+Pointer<Void> smoke_TypesWithDefaults_ImmutableStructWithDefaults_toFfi_nullable(ImmutableStructWithDefaults value) {
+  if (value == null) return Pointer<Void>.fromAddress(0);
+  final _handle = smoke_TypesWithDefaults_ImmutableStructWithDefaults_toFfi(value);
+  final result = _smoke_TypesWithDefaults_ImmutableStructWithDefaults_create_handle_nullable(_handle);
+  smoke_TypesWithDefaults_ImmutableStructWithDefaults_releaseFfiHandle(_handle);
+  return result;
+}
+ImmutableStructWithDefaults smoke_TypesWithDefaults_ImmutableStructWithDefaults_fromFfi_nullable(Pointer<Void> handle) {
+  if (handle.address == 0) return null;
+  final _handle = _smoke_TypesWithDefaults_ImmutableStructWithDefaults_get_value_nullable(handle);
+  final result = smoke_TypesWithDefaults_ImmutableStructWithDefaults_fromFfi(_handle);
+  smoke_TypesWithDefaults_ImmutableStructWithDefaults_releaseFfiHandle(_handle);
+  return result;
+}
+void smoke_TypesWithDefaults_ImmutableStructWithDefaults_releaseFfiHandle_nullable(Pointer<Void> handle) =>
+  _smoke_TypesWithDefaults_ImmutableStructWithDefaults_release_handle_nullable(handle);
 // End of ImmutableStructWithDefaults "private" section.
 class StructWithAnEnum {
   AnEnum config;
@@ -246,4 +303,33 @@ StructWithAnEnum smoke_TypesWithDefaults_StructWithAnEnum_fromFfi(Pointer<Void> 
   return _result;
 }
 void smoke_TypesWithDefaults_StructWithAnEnum_releaseFfiHandle(Pointer<Void> handle) => _smoke_TypesWithDefaults_StructWithAnEnum_release_handle(handle);
+// Nullable StructWithAnEnum
+final _smoke_TypesWithDefaults_StructWithAnEnum_create_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithAnEnum_create_handle_nullable');
+final _smoke_TypesWithDefaults_StructWithAnEnum_release_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Void Function(Pointer<Void>),
+    void Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithAnEnum_release_handle_nullable');
+final _smoke_TypesWithDefaults_StructWithAnEnum_get_value_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_TypesWithDefaults_StructWithAnEnum_get_value_nullable');
+Pointer<Void> smoke_TypesWithDefaults_StructWithAnEnum_toFfi_nullable(StructWithAnEnum value) {
+  if (value == null) return Pointer<Void>.fromAddress(0);
+  final _handle = smoke_TypesWithDefaults_StructWithAnEnum_toFfi(value);
+  final result = _smoke_TypesWithDefaults_StructWithAnEnum_create_handle_nullable(_handle);
+  smoke_TypesWithDefaults_StructWithAnEnum_releaseFfiHandle(_handle);
+  return result;
+}
+StructWithAnEnum smoke_TypesWithDefaults_StructWithAnEnum_fromFfi_nullable(Pointer<Void> handle) {
+  if (handle.address == 0) return null;
+  final _handle = _smoke_TypesWithDefaults_StructWithAnEnum_get_value_nullable(handle);
+  final result = smoke_TypesWithDefaults_StructWithAnEnum_fromFfi(_handle);
+  smoke_TypesWithDefaults_StructWithAnEnum_releaseFfiHandle(_handle);
+  return result;
+}
+void smoke_TypesWithDefaults_StructWithAnEnum_releaseFfiHandle_nullable(Pointer<Void> handle) =>
+  _smoke_TypesWithDefaults_StructWithAnEnum_release_handle_nullable(handle);
 // End of StructWithAnEnum "private" section.

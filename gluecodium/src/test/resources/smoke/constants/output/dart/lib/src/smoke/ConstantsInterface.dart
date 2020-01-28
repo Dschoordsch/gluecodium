@@ -17,11 +17,14 @@ class ConstantsInterface {
   static final String stringConstant = "Foo bar";
   static final ConstantsInterface_StateEnum enumConstant = ConstantsInterface_StateEnum.on;
 }
-Pointer<Void> smoke_ConstantsInterface_toFfi(ConstantsInterface value) =>
-  value != null ? value._handle : Pointer<Void>.fromAddress(0);
-ConstantsInterface smoke_ConstantsInterface_fromFfi(Pointer<Void> handle) =>
-  handle.address != 0 ? ConstantsInterface._(handle) : null;
+Pointer<Void> smoke_ConstantsInterface_toFfi(ConstantsInterface value) => value._handle;
+ConstantsInterface smoke_ConstantsInterface_fromFfi(Pointer<Void> handle) => ConstantsInterface._(handle);
 void smoke_ConstantsInterface_releaseFfiHandle(Pointer<Void> handle) {}
+Pointer<Void> smoke_ConstantsInterface_toFfi_nullable(ConstantsInterface value) =>
+  value != null ? value._handle : Pointer<Void>.fromAddress(0);
+ConstantsInterface smoke_ConstantsInterface_fromFfi_nullable(Pointer<Void> handle) =>
+  handle.address != 0 ? ConstantsInterface._(handle) : null;
+void smoke_ConstantsInterface_releaseFfiHandle_nullable(Pointer<Void> handle) {}
 enum ConstantsInterface_StateEnum {
     off,
     on

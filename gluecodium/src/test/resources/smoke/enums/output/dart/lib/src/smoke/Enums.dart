@@ -1,4 +1,4 @@
-import 'package:library/src/String__conversion.dart';
+import 'package:library/src/BuiltInTypes__conversion.dart';
 import 'package:library/src/smoke/Enums_ExternalEnum__conversion.dart';
 import 'package:library/src/smoke/Enums_InternalErrorCode__conversion.dart';
 import 'package:library/src/smoke/Enums_SimpleEnum__conversion.dart';
@@ -61,11 +61,14 @@ class Enums {
     return _result;
   }
 }
-Pointer<Void> smoke_Enums_toFfi(Enums value) =>
-  value != null ? value._handle : Pointer<Void>.fromAddress(0);
-Enums smoke_Enums_fromFfi(Pointer<Void> handle) =>
-  handle.address != 0 ? Enums._(handle) : null;
+Pointer<Void> smoke_Enums_toFfi(Enums value) => value._handle;
+Enums smoke_Enums_fromFfi(Pointer<Void> handle) => Enums._(handle);
 void smoke_Enums_releaseFfiHandle(Pointer<Void> handle) {}
+Pointer<Void> smoke_Enums_toFfi_nullable(Enums value) =>
+  value != null ? value._handle : Pointer<Void>.fromAddress(0);
+Enums smoke_Enums_fromFfi_nullable(Pointer<Void> handle) =>
+  handle.address != 0 ? Enums._(handle) : null;
+void smoke_Enums_releaseFfiHandle_nullable(Pointer<Void> handle) {}
 enum Enums_SimpleEnum {
     first,
     second
@@ -124,4 +127,33 @@ Enums_ErrorStruct smoke_Enums_ErrorStruct_fromFfi(Pointer<Void> handle) {
   return _result;
 }
 void smoke_Enums_ErrorStruct_releaseFfiHandle(Pointer<Void> handle) => _smoke_Enums_ErrorStruct_release_handle(handle);
+// Nullable Enums_ErrorStruct
+final _smoke_Enums_ErrorStruct_create_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_Enums_ErrorStruct_create_handle_nullable');
+final _smoke_Enums_ErrorStruct_release_handle_nullable = __lib.nativeLibrary.lookupFunction<
+    Void Function(Pointer<Void>),
+    void Function(Pointer<Void>)
+  >('smoke_Enums_ErrorStruct_release_handle_nullable');
+final _smoke_Enums_ErrorStruct_get_value_nullable = __lib.nativeLibrary.lookupFunction<
+    Pointer<Void> Function(Pointer<Void>),
+    Pointer<Void> Function(Pointer<Void>)
+  >('smoke_Enums_ErrorStruct_get_value_nullable');
+Pointer<Void> smoke_Enums_ErrorStruct_toFfi_nullable(Enums_ErrorStruct value) {
+  if (value == null) return Pointer<Void>.fromAddress(0);
+  final _handle = smoke_Enums_ErrorStruct_toFfi(value);
+  final result = _smoke_Enums_ErrorStruct_create_handle_nullable(_handle);
+  smoke_Enums_ErrorStruct_releaseFfiHandle(_handle);
+  return result;
+}
+Enums_ErrorStruct smoke_Enums_ErrorStruct_fromFfi_nullable(Pointer<Void> handle) {
+  if (handle.address == 0) return null;
+  final _handle = _smoke_Enums_ErrorStruct_get_value_nullable(handle);
+  final result = smoke_Enums_ErrorStruct_fromFfi(_handle);
+  smoke_Enums_ErrorStruct_releaseFfiHandle(_handle);
+  return result;
+}
+void smoke_Enums_ErrorStruct_releaseFfiHandle_nullable(Pointer<Void> handle) =>
+  _smoke_Enums_ErrorStruct_release_handle_nullable(handle);
 // End of Enums_ErrorStruct "private" section.

@@ -1,5 +1,5 @@
+import 'package:library/src/BuiltInTypes__conversion.dart';
 import 'package:library/src/GenericTypes__conversion.dart';
-import 'package:library/src/String__conversion.dart';
 import 'package:library/src/smoke/Constructors_ErrorEnum__conversion.dart';
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
@@ -78,11 +78,14 @@ class Constructors {
     return __result_handle;
   }
 }
-Pointer<Void> smoke_Constructors_toFfi(Constructors value) =>
-  value != null ? value._handle : Pointer<Void>.fromAddress(0);
-Constructors smoke_Constructors_fromFfi(Pointer<Void> handle) =>
-  handle.address != 0 ? Constructors._(handle) : null;
+Pointer<Void> smoke_Constructors_toFfi(Constructors value) => value._handle;
+Constructors smoke_Constructors_fromFfi(Pointer<Void> handle) => Constructors._(handle);
 void smoke_Constructors_releaseFfiHandle(Pointer<Void> handle) {}
+Pointer<Void> smoke_Constructors_toFfi_nullable(Constructors value) =>
+  value != null ? value._handle : Pointer<Void>.fromAddress(0);
+Constructors smoke_Constructors_fromFfi_nullable(Pointer<Void> handle) =>
+  handle.address != 0 ? Constructors._(handle) : null;
+void smoke_Constructors_releaseFfiHandle_nullable(Pointer<Void> handle) {}
 enum Constructors_ErrorEnum {
     none,
     crashed

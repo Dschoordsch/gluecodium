@@ -24,6 +24,11 @@
 {{>dart/DartImport}}
 {{/imports}}
 
+import 'dart:ffi';
+import 'package:ffi/ffi.dart';
+
+import 'package:{{libraryName}}/src/_library_init.dart' as __lib;
+
 {{#model}}
 int {{resolveName "Ffi"}}_toFfi({{resolveName}} value) {
   switch (value) {
@@ -50,6 +55,9 @@ int {{resolveName "Ffi"}}_toFfi({{resolveName}} value) {
 }
 
 void {{resolveName "Ffi"}}_releaseFfiHandle(int handle) {}
+
+{{>dart/DartNullableTypeConversion}}
+
 {{/model}}{{!!
 
 }}{{+enumeratorValue}}{{#value}}{{.}}{{/value}}{{^value}}{{iter.position}}{{/value}}{{/enumeratorValue}}

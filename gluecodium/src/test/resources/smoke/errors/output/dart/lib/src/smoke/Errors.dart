@@ -1,4 +1,4 @@
-import 'package:library/src/String__conversion.dart';
+import 'package:library/src/BuiltInTypes__conversion.dart';
 import 'package:library/src/smoke/Errors_ExternalErrors__conversion.dart';
 import 'package:library/src/smoke/Errors_InternalErrorCode__conversion.dart';
 import 'package:library/src/smoke/Payload.dart';
@@ -166,11 +166,14 @@ class Errors {
     return _result;
   }
 }
-Pointer<Void> smoke_Errors_toFfi(Errors value) =>
-  value != null ? value._handle : Pointer<Void>.fromAddress(0);
-Errors smoke_Errors_fromFfi(Pointer<Void> handle) =>
-  handle.address != 0 ? Errors._(handle) : null;
+Pointer<Void> smoke_Errors_toFfi(Errors value) => value._handle;
+Errors smoke_Errors_fromFfi(Pointer<Void> handle) => Errors._(handle);
 void smoke_Errors_releaseFfiHandle(Pointer<Void> handle) {}
+Pointer<Void> smoke_Errors_toFfi_nullable(Errors value) =>
+  value != null ? value._handle : Pointer<Void>.fromAddress(0);
+Errors smoke_Errors_fromFfi_nullable(Pointer<Void> handle) =>
+  handle.address != 0 ? Errors._(handle) : null;
+void smoke_Errors_releaseFfiHandle_nullable(Pointer<Void> handle) {}
 enum Errors_InternalErrorCode {
     errorNone,
     errorFatal
